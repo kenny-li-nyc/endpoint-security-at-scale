@@ -44,42 +44,62 @@
             </header>
 
             <section class="page-body">
-                <h2>The role of the platform layer</h2>
-                <p>In an enterprise with 50,000+ endpoints, the Windows and Azure platform is not just infrastructure — it is the enforcement surface for every security policy. Group Policy, Entra ID Conditional Access, and Active Directory trust boundaries determine what users can do, what devices can connect, and which security controls apply. A misconfigured platform layer undermines every layer above it.</p>
+                <div class="content-block">
+                    <span class="section-tag">Foundation</span>
+                    <h2>The role of the platform layer</h2>
+                    <p class="intro">Every security control in the enterprise sits on top of Windows and Azure. If the foundation is misconfigured, nothing above it can be trusted.</p>
+                    <p>Active Directory controls who can authenticate. Group Policy controls what endpoints are allowed to do. Entra ID Conditional Access controls which devices can reach cloud resources. These are not background services. They are the enforcement mechanism for the entire security posture.</p>
+                    <p>At 50,000 endpoints, a single misconfigured GPO can propagate to every machine in the domain within hours. A compromised admin account can disable security tools at scale. The platform layer is where attackers look first because the leverage is highest.</p>
+                </div>
 
-                <h2>Core components</h2>
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <h4>Active Directory</h4>
-                        <p>The authoritative identity store for on-premises environments. Controls authentication, authorization, and group membership across domain-joined endpoints.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Microsoft Entra ID</h4>
-                        <p>Cloud identity provider extending AD to Azure and SaaS applications. Enables Conditional Access policies, MFA enforcement, and device compliance checks.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Group Policy (GPO)</h4>
-                        <p>The primary mechanism for enforcing security baselines across Windows endpoints — controlling audit settings, PowerShell execution policy, firewall rules, and software restrictions.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Windows Internals</h4>
-                        <p>Understanding how Windows handles processes, services, authentication tokens, and the registry is essential for distinguishing normal system behavior from attacker tradecraft.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Azure Arc</h4>
-                        <p>Extends Azure management and policy enforcement to on-premises and multi-cloud Windows servers, enabling unified governance across hybrid environments.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Entra ID Conditional Access</h4>
-                        <p>Policy engine that evaluates device compliance, user risk, and location signals before granting access — acting as a real-time access control checkpoint.</p>
+                <div class="content-block">
+                    <span class="section-tag">Core components</span>
+                    <h2>Key technologies</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Active Directory</h4>
+                            <p>The authoritative identity store for on-premises environments. Controls authentication, authorization, and group membership across domain-joined endpoints.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Microsoft Entra ID</h4>
+                            <p>Cloud identity provider extending AD to Azure and SaaS applications. Enables Conditional Access policies, MFA enforcement, and device compliance checks.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Group Policy (GPO)</h4>
+                            <p>The primary mechanism for enforcing security baselines across Windows endpoints. Controls audit settings, PowerShell execution policy, firewall rules, and software restrictions.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Windows Internals</h4>
+                            <p>Understanding how Windows handles processes, services, authentication tokens, and the registry is essential for distinguishing normal system behavior from attacker tradecraft.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Azure Arc</h4>
+                            <p>Extends Azure management and policy enforcement to on-premises and multi-cloud Windows servers. Enables unified governance across hybrid environments.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Entra ID Conditional Access</h4>
+                            <p>Policy engine that evaluates device compliance, user risk, and location signals before granting access. Acts as a real-time access control checkpoint.</p>
+                        </div>
                     </div>
                 </div>
 
-                <h2>Why platform hygiene matters for security</h2>
-                <p>Attackers target the platform layer because it offers the highest leverage: a compromised AD admin account or a misconfigured GPO can disable security tools across thousands of endpoints simultaneously. Reference common attack patterns: pass-the-hash, Kerberoasting, GPO abuse. Explain that hardening the platform layer — enforcing least privilege, auditing privileged group membership, enabling Protected Users security group — reduces the blast radius of any breach above it.</p>
+                <div class="content-block">
+                    <span class="section-tag">Security implications</span>
+                    <h2>Why platform hygiene matters</h2>
+                    <p class="intro">Most endpoint attacks do not start with malware. They start with credential abuse.</p>
+                    <p>Pass-the-hash attacks reuse captured NTLM hashes to authenticate without knowing the password. Kerberoasting extracts service account credentials from Active Directory ticket requests. GPO abuse repurposes a legitimate administrative tool to push attacker scripts to every machine in scope.</p>
+                    <p>These attacks work because they blend in. They use tools Windows already trusts. Defending against them requires least privilege on admin accounts, auditing on privileged group membership, and the Protected Users security group enabled for sensitive accounts.</p>
+                </div>
 
-                <h2>Platform layer in the enterprise pipeline</h2>
-                <p>This layer feeds Layer 2 (Telemetry) because Windows authentication events, GPO application logs, and Entra ID sign-in logs are primary telemetry sources. A well-configured audit policy ensures those signals are generated consistently across all endpoints.</p>
+                <div class="content-block">
+                    <span class="section-tag">Pipeline connection</span>
+                    <h2>How this layer feeds the next</h2>
+                    <p>The platform layer generates the raw material for everything above it.</p>
+                    <p>Windows authentication events, GPO application logs, and Entra ID sign-in logs are primary telemetry sources for Layer 2. A domain controller not configured to log process creation events is a blind spot. An audit policy that has not been tuned produces either too much noise or too little signal.</p>
+                    <div class="pipeline-note">
+                        <p>Getting this layer right is what makes detection possible upstream. <strong>Layer 02: Telemetry Collection</strong> depends on the audit policy and logging configuration established here.</p>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
