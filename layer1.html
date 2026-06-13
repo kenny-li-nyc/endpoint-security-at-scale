@@ -58,23 +58,23 @@
                     <div class="tech-grid">
                         <div class="tech-card">
                             <h4>Active Directory</h4>
-                            <p>The authoritative identity store for on-premises environments. Controls authentication, authorization, and group membership across domain-joined endpoints.</p>
+                            <p>Controls authentication, authorization, and privileged access across the enterprise. Active Directory remains a primary target for attackers because compromise of domain administration can result in full control of the environment.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Microsoft Entra ID</h4>
-                            <p>Cloud identity provider extending AD to Azure and SaaS applications. Enables Conditional Access policies, MFA enforcement, and device compliance checks.</p>
+                            <p>Cloud identity provider extending on-premises Active Directory to Azure and SaaS applications. Because most enterprise applications now rely on cloud identity, Microsoft Entra ID has become a critical enforcement point for Zero Trust access decisions, enabling Conditional Access, MFA, and device compliance enforcement.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Group Policy (GPO)</h4>
-                            <p>The primary mechanism for enforcing security baselines across Windows endpoints. Controls audit settings, PowerShell execution policy, firewall rules, and software restrictions.</p>
+                            <p>Primary mechanism for enforcing security baselines across Windows endpoints. Controls audit settings, PowerShell execution policy, firewall rules, software restrictions, and other enterprise security controls at scale.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Windows Internals</h4>
-                            <p>Understanding how Windows handles processes, services, authentication tokens, and the registry is essential for distinguishing normal system behavior from attacker tradecraft.</p>
+                            <p>Many endpoint detection techniques rely on understanding how Windows creates processes, loads DLLs, manages access tokens, and records security events. Distinguishing normal system behavior from attacker tradecraft requires a deep understanding of Windows internals.</p>
                         </div>
                         <div class="tech-card">
-                            <h4>Azure Arc</h4>
-                            <p>Extends Azure management and policy enforcement to on-premises and multi-cloud Windows servers. Enables unified governance across hybrid environments.</p>
+                            <h4>Privileged Access Management (PAM)</h4>
+                            <p>Administrative accounts represent the highest-value targets in an enterprise environment. Technologies such as Just-In-Time access, Privileged Identity Management (PIM), and tiered administration help reduce the risk of credential compromise and privilege escalation.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Entra ID Conditional Access</h4>
