@@ -36,28 +36,28 @@
         <section class="layer-grid">
             <a href="layer1.html" class="card">
                 <span class="layer-num">01</span>
-                <h3>Windows Infrastructure & Telemetry</h3>
-                <p>Establishing robust visibility requires deep integration with Windows Event Forwarding and Sysmon. This layer ensures high-fidelity signal ingestion across the entire fleet.</p>
+                <h3>Windows & Azure Platform</h3>
+                <p>Active Directory, Entra ID, Group Policy, and Windows internals form the foundation of enterprise endpoint security. Without a well-governed identity and OS layer, no security control above it is reliable.</p>
             </a>
             <a href="layer2.html" class="card">
                 <span class="layer-num">02</span>
-                <h3>Detection Engineering</h3>
-                <p>Translating raw telemetry into actionable alerts requires mapping to the MITRE ATT&CK framework. We focus on reducing noise while maintaining coverage for advanced persistent threats.</p>
+                <h3>Telemetry Collection</h3>
+                <p>Security depends on visibility. This layer covers how enterprises collect high-fidelity signals from endpoints — Windows Event Logs, PowerShell activity, authentication events, Defender telemetry, and Azure diagnostics.</p>
             </a>
             <a href="layer3.html" class="card">
                 <span class="layer-num">03</span>
-                <h3>AI-Assisted Investigation</h3>
-                <p>Security Copilot acts as an investigation accelerator, synthesizing complex alert chains into human-readable summaries. This reduces the cognitive load on analysts during critical incidents.</p>
+                <h3>Detection & Analytics</h3>
+                <p>Raw telemetry becomes actionable through detection rules, KQL queries, and analytics platforms like Microsoft Defender for Endpoint and Microsoft Sentinel. This layer maps signals to threats using frameworks like MITRE ATT&CK.</p>
             </a>
             <a href="layer4.html" class="card">
                 <span class="layer-num">04</span>
-                <h3>Automated Response</h3>
-                <p>Orchestration playbooks execute containment actions at machine speed, such as isolating compromised hosts or revoking session tokens. This minimizes dwell time without manual intervention.</p>
+                <h3>Security Copilot</h3>
+                <p>Microsoft Security Copilot acts as an AI-powered investigation engine, synthesizing alert chains into readable summaries, suggesting responses, and executing prompt-driven runbooks — accelerating analyst decisions without replacing human judgment.</p>
             </a>
             <a href="layer5.html" class="card">
                 <span class="layer-num">05</span>
-                <h3>Continuous Improvement</h3>
-                <p>Post-incident analysis feeds back into the detection pipeline, creating a closed-loop system. This ensures the architecture evolves alongside the changing threat landscape.</p>
+                <h3>Automated Response</h3>
+                <p>Validated findings trigger automated remediation via PowerShell runbooks, Ansible playbooks, and Logic Apps — isolating hosts, restarting services, revoking tokens, and updating tickets with no manual intervention required.</p>
             </a>
         </section>
 
