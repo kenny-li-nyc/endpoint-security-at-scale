@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetry Collection | Endpoint Security at Scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="layer1.html">Architecture</a></li>
+                <li><a href="tools.html">Tools & Platforms</a></li>
+                <li><a href="operations.html">Operations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h4>Architecture Layers</h4>
+            <ul>
+                <li><a href="layer1.html">01 Windows & Azure Platform</a></li>
+                <li><a href="layer2.html" class="active">02 Telemetry Collection</a></li>
+                <li><a href="layer3.html">03 Detection & Analytics</a></li>
+                <li><a href="layer4.html">04 Security Copilot</a></li>
+                <li><a href="layer5.html">05 Automated Response</a></li>
+            </ul>
+        </aside>
+
+        <main class="page-content">
+            <header class="page-hero">
+                <div class="layer-eyebrow">Layer 02</div>
+                <h1>Telemetry Collection</h1>
+                <p class="purpose">Turning endpoint activity into structured, actionable signals.</p>
+            </header>
+
+            <section class="page-body">
+                <h2>Why telemetry is the foundation of detection</h2>
+                <p>Detection is only as good as the data beneath it. In an enterprise environment, endpoints generate thousands of events per hour — most of them noise. The telemetry layer is responsible for identifying which signals matter, ensuring they are collected consistently, and routing them to the right analytics platform. Without high-fidelity telemetry, detection rules produce false negatives, investigations lack evidence, and Security Copilot has nothing to reason about.</p>
+
+                <h2>Primary telemetry sources</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>Windows Event Logs</h4>
+                        <p>The native audit trail of Windows activity. Security channel logs authentication events (4624, 4625, 4648), process creation (4688), and privilege use. System and Application channels surface service failures and software behavior.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>PowerShell Logging</h4>
+                        <p>Script block logging (Event 4104) and module logging capture the full content of executed PowerShell — critical for detecting obfuscated commands, living-off-the-land attacks, and malicious automation.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Microsoft Defender Telemetry</h4>
+                        <p>Defender for Endpoint streams process trees, network connections, file modifications, and behavioral detections to Microsoft's cloud backend, enriching alert context beyond what local logs provide.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Azure Diagnostics & Sign-in Logs</h4>
+                        <p>Entra ID logs every authentication attempt, Conditional Access evaluation, and token issuance. Azure Activity Logs record control-plane changes to resources — VM restarts, role assignments, policy modifications.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Hardware & Firmware Events</h4>
+                        <p>HP iLO, IPMI, and UEFI logs surface physical layer events — unexpected reboots, hardware failures, and firmware changes that OS-level monitoring cannot see.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Network Flow Data</h4>
+                        <p>DNS query logs, proxy logs, and NetFlow data reveal lateral movement and command-and-control communication patterns that endpoint-only telemetry misses.</p>
+                    </div>
+                </div>
+
+                <h2>Telemetry quality: the signal-to-noise problem</h2>
+                <p>The challenge: a 50,000-endpoint environment generates millions of events per day. Collecting everything is not the goal — collecting the right things at the right fidelity is. Discuss audit policy tuning (enabling process creation logging, command line auditing), log forwarding architecture (Windows Event Forwarding vs. agent-based collection), and the difference between raw log volume and detection-relevant signal density.</p>
+
+                <h2>How telemetry feeds the pipeline</h2>
+                <p>Telemetry is the fuel for every layer above it. Detection rules in Sentinel and Defender operate on this data. Security Copilot uses telemetry as evidence when building investigation timelines. Automated response playbooks query telemetry to validate findings before executing remediation.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Kenny Li · Senior Infrastructure Engineer · github.com/kenny-li-nyc</p>
+        </div>
+    </footer>
+
+    <script src="assets/nav.js"></script>
+</body>
+</html>

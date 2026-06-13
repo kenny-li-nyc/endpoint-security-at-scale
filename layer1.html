@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows & Azure Platform | Endpoint Security at Scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="layer1.html">Architecture</a></li>
+                <li><a href="tools.html">Tools & Platforms</a></li>
+                <li><a href="operations.html">Operations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h4>Architecture Layers</h4>
+            <ul>
+                <li><a href="layer1.html" class="active">01 Windows & Azure Platform</a></li>
+                <li><a href="layer2.html">02 Telemetry Collection</a></li>
+                <li><a href="layer3.html">03 Detection & Analytics</a></li>
+                <li><a href="layer4.html">04 Security Copilot</a></li>
+                <li><a href="layer5.html">05 Automated Response</a></li>
+            </ul>
+        </aside>
+
+        <main class="page-content">
+            <header class="page-hero">
+                <div class="layer-eyebrow">Layer 01</div>
+                <h1>Windows & Azure Platform</h1>
+                <p class="purpose">The identity and OS foundation that every security control depends on.</p>
+            </header>
+
+            <section class="page-body">
+                <h2>The role of the platform layer</h2>
+                <p>In an enterprise with 50,000+ endpoints, the Windows and Azure platform is not just infrastructure — it is the enforcement surface for every security policy. Group Policy, Entra ID Conditional Access, and Active Directory trust boundaries determine what users can do, what devices can connect, and which security controls apply. A misconfigured platform layer undermines every layer above it.</p>
+
+                <h2>Core components</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>Active Directory</h4>
+                        <p>The authoritative identity store for on-premises environments. Controls authentication, authorization, and group membership across domain-joined endpoints.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Microsoft Entra ID</h4>
+                        <p>Cloud identity provider extending AD to Azure and SaaS applications. Enables Conditional Access policies, MFA enforcement, and device compliance checks.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Group Policy (GPO)</h4>
+                        <p>The primary mechanism for enforcing security baselines across Windows endpoints — controlling audit settings, PowerShell execution policy, firewall rules, and software restrictions.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Windows Internals</h4>
+                        <p>Understanding how Windows handles processes, services, authentication tokens, and the registry is essential for distinguishing normal system behavior from attacker tradecraft.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Azure Arc</h4>
+                        <p>Extends Azure management and policy enforcement to on-premises and multi-cloud Windows servers, enabling unified governance across hybrid environments.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Entra ID Conditional Access</h4>
+                        <p>Policy engine that evaluates device compliance, user risk, and location signals before granting access — acting as a real-time access control checkpoint.</p>
+                    </div>
+                </div>
+
+                <h2>Why platform hygiene matters for security</h2>
+                <p>Attackers target the platform layer because it offers the highest leverage: a compromised AD admin account or a misconfigured GPO can disable security tools across thousands of endpoints simultaneously. Reference common attack patterns: pass-the-hash, Kerberoasting, GPO abuse. Explain that hardening the platform layer — enforcing least privilege, auditing privileged group membership, enabling Protected Users security group — reduces the blast radius of any breach above it.</p>
+
+                <h2>Platform layer in the enterprise pipeline</h2>
+                <p>This layer feeds Layer 2 (Telemetry) because Windows authentication events, GPO application logs, and Entra ID sign-in logs are primary telemetry sources. A well-configured audit policy ensures those signals are generated consistently across all endpoints.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Kenny Li · Senior Infrastructure Engineer · github.com/kenny-li-nyc</p>
+        </div>
+    </footer>
+
+    <script src="assets/nav.js"></script>
+</body>
+</html>
