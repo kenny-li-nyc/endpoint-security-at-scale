@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection & Analytics | Endpoint Security at Scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="layer1.html">Architecture</a></li>
+                <li><a href="tools.html">Tools & Platforms</a></li>
+                <li><a href="operations.html">Operations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h4>Architecture Layers</h4>
+            <ul>
+                <li><a href="layer1.html">01 Windows & Azure Platform</a></li>
+                <li><a href="layer2.html">02 Telemetry Collection</a></li>
+                <li><a href="layer3.html" class="active">03 Detection & Analytics</a></li>
+                <li><a href="layer4.html">04 Security Copilot</a></li>
+                <li><a href="layer5.html">05 Automated Response</a></li>
+            </ul>
+        </aside>
+
+        <main class="page-content">
+            <header class="page-hero">
+                <div class="layer-eyebrow">Layer 03</div>
+                <h1>Detection & Analytics</h1>
+                <p class="purpose">Turning raw telemetry into alerts that analysts can act on.</p>
+            </header>
+
+            <section class="page-body">
+                <div class="content-block">
+                    <span class="section-tag">Foundation</span>
+                    <h2>What detection engineering does</h2>
+                    <p class="intro">Telemetry is raw data. Detection is the process of identifying which patterns in that data represent a real threat.</p>
+                    <p>Detection engineers write rules that match known attack patterns. They tune those rules to reduce false positives. They map detections to the MITRE ATT&CK framework so analysts understand what technique is being used.</p>
+                    <p>At enterprise scale, manual triage is not possible. Alerts must be prioritized automatically. High fidelity detections go directly to analysts. Low fidelity signals get correlated before surfacing.</p>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-tag">Core platforms</span>
+                    <h2>Detection tools in the enterprise</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Microsoft Defender for Endpoint</h4>
+                            <p>Agent based EDR platform deployed on Windows endpoints. Provides behavioral detection, process tree visibility, and automated investigation capabilities. Integrated with Microsoft threat intelligence.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Microsoft Sentinel</h4>
+                            <p>Cloud native SIEM and SOAR platform. Aggregates logs from endpoints, identity systems, and cloud infrastructure. Runs KQL based detection rules and supports automated playbook execution.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>KQL (Kusto Query Language)</h4>
+                            <p>The query language used in Defender and Sentinel. Analysts use KQL to hunt for threats, build detection rules, and investigate alert timelines. It is the core technical skill for working in the Microsoft security stack.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>MITRE ATT&CK Framework</h4>
+                            <p>A knowledge base of adversary tactics and techniques based on real world observations. Used to classify detections, measure coverage gaps, and communicate findings across security teams.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Microsoft Defender for Identity</h4>
+                            <p>Monitors Active Directory for identity based attacks. Detects pass the hash, Kerberoasting, and lateral movement. Integrates with Defender for Endpoint for unified incident views.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Threat Intelligence</h4>
+                            <p>External and internal feeds that enrich detections with context. Known malicious IPs, file hashes, and domain names can trigger alerts when they appear in telemetry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-tag">Detection logic</span>
+                    <h2>How detection rules work</h2>
+                    <p class="intro">A detection rule is a query that runs continuously against telemetry. When a match occurs, it creates an alert.</p>
+                    <p>Good detection rules are specific enough to avoid false positives. They are broad enough to catch real variations of an attack. Writing them requires understanding both the attacker technique and normal system behavior.</p>
+                    <p>Behavioral detection goes further than signature matching. Instead of looking for a known malicious file, it looks for suspicious sequences. PowerShell spawning a network connection is unusual. A service stopping and immediately restarting is unusual. These patterns trigger investigation even without a known malware signature.</p>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-tag">Pipeline connection</span>
+                    <h2>How this layer feeds the next</h2>
+                    <p>Detection produces alerts. Alerts are the input to Security Copilot. A well tuned detection layer sends Copilot high fidelity signals with rich context. A poorly tuned layer floods Copilot with noise and slows investigation.</p>
+                    <div class="pipeline-note">
+                        <p>Detection quality determines how useful Security Copilot can be. <strong>Layer 04: Security Copilot</strong> takes the alerts produced here and builds investigation timelines from them.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Kenny Li · Senior Infrastructure Engineer · github.com/kenny-li-nyc</p>
+        </div>
+    </footer>
+
+    <script src="assets/nav.js"></script>
+</body>
+</html>
