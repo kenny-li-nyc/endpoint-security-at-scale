@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint Security at Scale | Enterprise Architecture & AI-Assisted Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="layer1.html">Architecture</a></li>
+                <li><a href="#">Tools & Platforms</a></li>
+                <li><a href="operations.html">Operations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Endpoint Security at Scale: Enterprise Architecture & AI-Assisted Operations</h1>
+            <p class="subtitle">A technical reference examining how large enterprises secure tens of thousands of endpoints — from Windows infrastructure and telemetry collection through AI-assisted detection, Security Copilot workflows, and automated response.</p>
+            <div class="byline">By Kenny Li · Senior Infrastructure Engineer</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="layer-grid">
+            <a href="layer1.html" class="card">
+                <span class="layer-num">01</span>
+                <h3>Windows Infrastructure & Telemetry</h3>
+                <p>Establishing robust visibility requires deep integration with Windows Event Forwarding and Sysmon. This layer ensures high-fidelity signal ingestion across the entire fleet.</p>
+            </a>
+            <a href="layer2.html" class="card">
+                <span class="layer-num">02</span>
+                <h3>Detection Engineering</h3>
+                <p>Translating raw telemetry into actionable alerts requires mapping to the MITRE ATT&CK framework. We focus on reducing noise while maintaining coverage for advanced persistent threats.</p>
+            </a>
+            <a href="layer3.html" class="card">
+                <span class="layer-num">03</span>
+                <h3>AI-Assisted Investigation</h3>
+                <p>Security Copilot acts as an investigation accelerator, synthesizing complex alert chains into human-readable summaries. This reduces the cognitive load on analysts during critical incidents.</p>
+            </a>
+            <a href="layer4.html" class="card">
+                <span class="layer-num">04</span>
+                <h3>Automated Response</h3>
+                <p>Orchestration playbooks execute containment actions at machine speed, such as isolating compromised hosts or revoking session tokens. This minimizes dwell time without manual intervention.</p>
+            </a>
+            <a href="layer5.html" class="card">
+                <span class="layer-num">05</span>
+                <h3>Continuous Improvement</h3>
+                <p>Post-incident analysis feeds back into the detection pipeline, creating a closed-loop system. This ensures the architecture evolves alongside the changing threat landscape.</p>
+            </a>
+        </section>
+
+        <section class="content-section">
+            <h2>Why this architecture exists</h2>
+            <p>Manual log review is fundamentally unsustainable when managing 50,000+ endpoints. At this scale, the sheer volume of telemetry renders traditional, human-centric monitoring ineffective, leading to alert fatigue and missed indicators of compromise.</p>
+            <p>The five layers defined here form a cohesive pipeline that transforms raw Windows signals into automated remediation. By structuring the environment this way, we move from reactive firefighting to a proactive, resilient security posture that scales linearly with the organization.</p>
+            <p>AI, specifically through tools like Security Copilot, acts as the critical investigation accelerator in the middle of this pipeline. It bridges the gap between raw data and decision-making, allowing analysts to focus on high-context threats rather than repetitive data correlation tasks.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Kenny Li · Senior Infrastructure Engineer · github.com/kenny-li-nyc</p>
+        </div>
+    </footer>
+
+    <script src="assets/nav.js"></script>
+</body>
+</html>
