@@ -44,42 +44,61 @@
             </header>
 
             <section class="page-body">
-                <h2>Why telemetry is the foundation of detection</h2>
-                <p>Detection is only as good as the data beneath it. In an enterprise environment, endpoints generate thousands of events per hour — most of them noise. The telemetry layer is responsible for identifying which signals matter, ensuring they are collected consistently, and routing them to the right analytics platform. Without high-fidelity telemetry, detection rules produce false negatives, investigations lack evidence, and Security Copilot has nothing to reason about.</p>
+                <div class="content-block">
+                    <span class="section-tag">Foundation</span>
+                    <h2>Why telemetry is the foundation of detection</h2>
+                    <p class="intro">Detection is only as good as the data beneath it. Poor telemetry produces false negatives and leaves investigations without evidence.</p>
+                    <p>In an enterprise environment, endpoints generate thousands of events per hour. Most of them are noise. The telemetry layer identifies which signals matter. It ensures they are collected consistently. It routes them to the right analytics platform.</p>
+                    <p>Without high-fidelity telemetry, detection rules miss real attacks. Security Copilot has no evidence to reason about. Automated response has nothing to act on. Every layer above depends on this one.</p>
+                </div>
 
-                <h2>Primary telemetry sources</h2>
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <h4>Windows Event Logs</h4>
-                        <p>The native audit trail of Windows activity. Security channel logs authentication events (4624, 4625, 4648), process creation (4688), and privilege use. System and Application channels surface service failures and software behavior.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>PowerShell Logging</h4>
-                        <p>Script block logging (Event 4104) and module logging capture the full content of executed PowerShell — critical for detecting obfuscated commands, living-off-the-land attacks, and malicious automation.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Microsoft Defender Telemetry</h4>
-                        <p>Defender for Endpoint streams process trees, network connections, file modifications, and behavioral detections to Microsoft's cloud backend, enriching alert context beyond what local logs provide.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Azure Diagnostics & Sign-in Logs</h4>
-                        <p>Entra ID logs every authentication attempt, Conditional Access evaluation, and token issuance. Azure Activity Logs record control-plane changes to resources — VM restarts, role assignments, policy modifications.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Hardware & Firmware Events</h4>
-                        <p>HP iLO, IPMI, and UEFI logs surface physical layer events — unexpected reboots, hardware failures, and firmware changes that OS-level monitoring cannot see.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Network Flow Data</h4>
-                        <p>DNS query logs, proxy logs, and NetFlow data reveal lateral movement and command-and-control communication patterns that endpoint-only telemetry misses.</p>
+                <div class="content-block">
+                    <span class="section-tag">Primary sources</span>
+                    <h2>What enterprises collect</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Windows Event Logs</h4>
+                            <p>The native audit trail of Windows activity. The Security channel logs authentication events, process creation, and privilege use. The System and Application channels surface service failures and software behavior.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>PowerShell Logging</h4>
+                            <p>Script block logging captures the full content of executed PowerShell. This is critical for detecting obfuscated commands and living-off-the-land attacks.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Microsoft Defender Telemetry</h4>
+                            <p>Defender for Endpoint streams process trees, network connections, and file modifications to Microsoft's cloud backend. This enriches alert context beyond what local logs provide.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Azure Diagnostics and Sign-in Logs</h4>
+                            <p>Entra ID logs every authentication attempt and Conditional Access evaluation. Azure Activity Logs record control-plane changes such as VM restarts, role assignments, and policy modifications.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Hardware and Firmware Events</h4>
+                            <p>HP iLO, IPMI, and UEFI logs surface physical layer events. These include unexpected reboots, hardware failures, and firmware changes that OS-level monitoring cannot see.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Network Flow Data</h4>
+                            <p>DNS query logs, proxy logs, and NetFlow data reveal lateral movement and command-and-control communication patterns. Endpoint-only telemetry misses these signals.</p>
+                        </div>
                     </div>
                 </div>
 
-                <h2>Telemetry quality: the signal-to-noise problem</h2>
-                <p>The challenge: a 50,000-endpoint environment generates millions of events per day. Collecting everything is not the goal — collecting the right things at the right fidelity is. Discuss audit policy tuning (enabling process creation logging, command line auditing), log forwarding architecture (Windows Event Forwarding vs. agent-based collection), and the difference between raw log volume and detection-relevant signal density.</p>
+                <div class="content-block">
+                    <span class="section-tag">Signal quality</span>
+                    <h2>The signal-to-noise problem</h2>
+                    <p class="intro">Collecting everything is not the goal. Collecting the right things at the right fidelity is.</p>
+                    <p>A 50,000-endpoint environment generates millions of events per day. Raw volume is not useful. Detection-relevant signal density is what matters.</p>
+                    <p>Audit policy tuning determines which events get logged. Enabling process creation logging and command line auditing adds critical visibility. Log forwarding architecture determines how signals reach analytics platforms. Windows Event Forwarding and agent-based collection each have trade-offs in scale and reliability.</p>
+                </div>
 
-                <h2>How telemetry feeds the pipeline</h2>
-                <p>Telemetry is the fuel for every layer above it. Detection rules in Sentinel and Defender operate on this data. Security Copilot uses telemetry as evidence when building investigation timelines. Automated response playbooks query telemetry to validate findings before executing remediation.</p>
+                <div class="content-block">
+                    <span class="section-tag">Pipeline connection</span>
+                    <h2>How this layer feeds the next</h2>
+                    <p>Telemetry is the fuel for every layer above it. Detection rules in Sentinel and Defender operate on this data. Security Copilot uses telemetry as evidence when building investigation timelines. Automated response playbooks query telemetry to validate findings before executing remediation.</p>
+                    <div class="pipeline-note">
+                        <p>The quality of telemetry determines the quality of every detection above it. <strong>Layer 03: Detection & Analytics</strong> depends on consistent, well-tuned signal collection established here.</p>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
