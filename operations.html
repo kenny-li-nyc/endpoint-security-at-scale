@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Operations | Endpoint Security at Scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="layer1.html">Architecture</a></li>
+                <li><a href="tools.html">Tools &amp; Platforms</a></li>
+                <li><a href="operations.html">Operations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h4>Architecture Layers</h4>
+            <ul>
+                <li><a href="layer1.html">01 Windows & Azure Platform</a></li>
+                <li><a href="layer2.html">02 Telemetry Collection</a></li>
+                <li><a href="layer3.html">03 Detection & Analytics</a></li>
+                <li><a href="layer4.html">04 Security Copilot</a></li>
+                <li><a href="layer5.html">05 Automated Response</a></li>
+            </ul>
+        </aside>
+
+        <main class="page-content">
+            <header class="page-hero">
+                <h1>Enterprise Operations</h1>
+                <p class="purpose">How the five layers function as an integrated security pipeline.</p>
+            </header>
+
+            <article class="page-body">
+                <section class="content-block">
+                    <span class="section-tag">Pipeline</span>
+                    <h2>The pipeline in practice</h2>
+                    <p class="intro">A security event flows through the entire architecture.</p>
+                    <p>A user runs a suspicious PowerShell command. This event generates a log entry on the endpoint. Layer 02 collects this log and forwards it to the SIEM. Layer 03 detects the malicious pattern and fires an alert. Security Copilot summarizes the alert and suggests a response. Automated response executes the remediation.</p>
+                </section>
+
+                <section class="content-block">
+                    <span class="section-tag">Failures</span>
+                    <h2>Where things break</h2>
+                    <p class="intro">Failure modes exist at every layer of the pipeline.</p>
+                    <p>Telemetry gaps blind detection rules. Detection rules fire too broadly and create noise. Copilot prompts are often too vague to be useful. Automation runs without proper approval gates and causes outages.</p>
+                </section>
+
+                <section class="content-block">
+                    <span class="section-tag">Improvement</span>
+                    <h2>Continuous improvement</h2>
+                    <p class="intro">The pipeline requires constant maintenance and refinement.</p>
+                    <p>The pipeline is not static. Detection rules are updated based on new threat intelligence. Telemetry coverage is audited against the MITRE ATT&CK matrix. Copilot prompt libraries are refined based on analyst feedback.</p>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Kenny Li &middot; Senior Infrastructure Engineer &middot; github.com/kenny-li-nyc</p>
+        </div>
+    </footer>
+
+    <script src="assets/nav.js"></script>
+</body>
+</html>
