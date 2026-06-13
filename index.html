@@ -14,11 +14,11 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">Endpoint Security at Scale</a>
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="index.html">Overview</a></li>
                 <li><a href="layer1.html">Architecture</a></li>
-                <li><a href="tools.html">Tools & Platforms</a></li>
+                <li><a href="tools.html">Tools &amp; Platforms</a></li>
                 <li><a href="operations.html">Operations</a></li>
             </ul>
         </div>
@@ -26,61 +26,85 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Endpoint Security at Scale: Enterprise Architecture & AI-Assisted Operations</h1>
-            <p class="subtitle">A technical reference examining how large enterprises secure tens of thousands of endpoints — from Windows infrastructure and telemetry collection through AI-assisted detection, Security Copilot workflows, and automated response.</p>
-            <div class="byline">By Kenny Li · Senior Infrastructure Engineer</div>
+            <h1>Endpoint Security at Scale:<br>Enterprise Architecture &amp; AI-Assisted Operations</h1>
+            <p class="subtitle">A technical reference examining how large enterprises secure tens of thousands of endpoints. Covers Windows infrastructure, telemetry collection, AI-assisted detection, Security Copilot workflows, and automated response.</p>
+            <div class="byline">By Kenny Li &middot; Senior Infrastructure Engineer</div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="architecture-diagram">
-            <svg viewBox="0 0 700 420" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100%" height="100%" fill="#0d1f3c" />
-                <!-- Box 1 -->
-                <rect x="150" y="20" width="400" height="60" rx="8" fill="#1D9E75" fill-opacity="0.15" stroke="#1D9E75" stroke-width="2" />
-                <text x="170" y="55" fill="white" font-size="14" font-weight="600">01</text>
-                <text x="220" y="55" fill="white" font-size="16" font-weight="600">Windows & Azure Platform</text>
-                <text x="220" y="75" fill="#8bacc8" font-size="12">AD, Entra ID, GPO</text>
-                <!-- Arrow 1 -->
-                <path d="M350 80 L350 100" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" />
-                <path d="M345 95 L350 100 L355 95" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" fill="none" />
-                <!-- Box 2 -->
-                <rect x="150" y="100" width="400" height="60" rx="8" fill="#185FA5" fill-opacity="0.15" stroke="#185FA5" stroke-width="2" />
-                <text x="170" y="135" fill="white" font-size="14" font-weight="600">02</text>
-                <text x="220" y="135" fill="white" font-size="16" font-weight="600">Telemetry Collection</text>
-                <text x="220" y="155" fill="#8bacc8" font-size="12">Logs, PowerShell, Defender</text>
-                <!-- Arrow 2 -->
-                <path d="M350 160 L350 180" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" />
-                <path d="M345 175 L350 180 L355 175" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" fill="none" />
-                <!-- Box 3 -->
-                <rect x="150" y="180" width="400" height="60" rx="8" fill="#1D9E75" fill-opacity="0.15" stroke="#1D9E75" stroke-width="2" />
-                <text x="170" y="215" fill="white" font-size="14" font-weight="600">03</text>
-                <text x="220" y="215" fill="white" font-size="16" font-weight="600">Detection & Analytics</text>
-                <text x="220" y="235" fill="#8bacc8" font-size="12">Sentinel, Defender, KQL</text>
-                <!-- Arrow 3 -->
-                <path d="M350 240 L350 260" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" />
-                <path d="M345 255 L350 260 L355 255" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" fill="none" />
-                <!-- Box 4 -->
-                <rect x="150" y="260" width="400" height="60" rx="8" fill="#185FA5" fill-opacity="0.15" stroke="#185FA5" stroke-width="2" />
-                <text x="170" y="295" fill="white" font-size="14" font-weight="600">04</text>
-                <text x="220" y="295" fill="white" font-size="16" font-weight="600">Security Copilot</text>
-                <text x="220" y="315" fill="#8bacc8" font-size="12">Summarization, Prompting</text>
-                <!-- Arrow 4 -->
-                <path d="M350 320 L350 340" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" />
-                <path d="M345 335 L350 340 L355 335" stroke="#4ea8de" stroke-width="2" stroke-opacity="0.6" fill="none" />
-                <!-- Box 5 -->
-                <rect x="150" y="340" width="400" height="60" rx="8" fill="#1D9E75" fill-opacity="0.15" stroke="#1D9E75" stroke-width="2" />
-                <text x="170" y="375" fill="white" font-size="14" font-weight="600">05</text>
-                <text x="220" y="375" fill="white" font-size="16" font-weight="600">Automated Response</text>
-                <text x="220" y="395" fill="#8bacc8" font-size="12">Runbooks, Playbooks</text>
-            </svg>
+    <div class="diagram-section">
+        <div class="container">
+            <p class="diagram-label">The five-layer endpoint security pipeline</p>
+            <div class="architecture-diagram">
+                <svg viewBox="0 0 700 480" width="100%" xmlns="http://www.w3.org/2000/svg">
+
+                    <defs>
+                        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#4ea8de" opacity="0.7" />
+                        </marker>
+                    </defs>
+
+                    <!-- Connecting line -->
+                    <line x1="350" y1="58" x2="350" y2="422" stroke="#4ea8de" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="4 3" />
+
+                    <!-- Box 1: Windows & Azure Platform -->
+                    <rect x="100" y="20" width="500" height="68" rx="8" fill="#1D9E75" fill-opacity="0.08" stroke="#1D9E75" stroke-width="1.5" />
+                    <rect x="100" y="20" width="6" height="68" rx="3" fill="#1D9E75" />
+                    <text x="124" y="48" fill="#1D9E75" font-size="10" font-weight="600" font-family="Inter, sans-serif" letter-spacing="0.06em">LAYER 01</text>
+                    <text x="124" y="68" fill="#e2e8f0" font-size="15" font-weight="600" font-family="Inter, sans-serif">Windows &amp; Azure Platform</text>
+                    <text x="480" y="58" fill="#8bacc8" font-size="11" font-family="Inter, sans-serif" text-anchor="end">AD · Entra ID · GPO · Windows Internals</text>
+
+                    <!-- Arrow -->
+                    <line x1="350" y1="90" x2="350" y2="108" stroke="#4ea8de" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrowhead)" />
+
+                    <!-- Box 2: Telemetry Collection -->
+                    <rect x="100" y="110" width="500" height="68" rx="8" fill="#185FA5" fill-opacity="0.08" stroke="#185FA5" stroke-width="1.5" />
+                    <rect x="100" y="110" width="6" height="68" rx="3" fill="#4ea8de" />
+                    <text x="124" y="138" fill="#4ea8de" font-size="10" font-weight="600" font-family="Inter, sans-serif" letter-spacing="0.06em">LAYER 02</text>
+                    <text x="124" y="158" fill="#e2e8f0" font-size="15" font-weight="600" font-family="Inter, sans-serif">Telemetry Collection</text>
+                    <text x="480" y="148" fill="#8bacc8" font-size="11" font-family="Inter, sans-serif" text-anchor="end">Event Logs · PowerShell · Defender · Azure Diagnostics</text>
+
+                    <!-- Arrow -->
+                    <line x1="350" y1="180" x2="350" y2="198" stroke="#4ea8de" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrowhead)" />
+
+                    <!-- Box 3: Detection & Analytics -->
+                    <rect x="100" y="200" width="500" height="68" rx="8" fill="#1D9E75" fill-opacity="0.08" stroke="#1D9E75" stroke-width="1.5" />
+                    <rect x="100" y="200" width="6" height="68" rx="3" fill="#1D9E75" />
+                    <text x="124" y="228" fill="#1D9E75" font-size="10" font-weight="600" font-family="Inter, sans-serif" letter-spacing="0.06em">LAYER 03</text>
+                    <text x="124" y="248" fill="#e2e8f0" font-size="15" font-weight="600" font-family="Inter, sans-serif">Detection &amp; Analytics</text>
+                    <text x="480" y="238" fill="#8bacc8" font-size="11" font-family="Inter, sans-serif" text-anchor="end">Defender for Endpoint · Sentinel · KQL · MITRE ATT&amp;CK</text>
+
+                    <!-- Arrow -->
+                    <line x1="350" y1="270" x2="350" y2="288" stroke="#4ea8de" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrowhead)" />
+
+                    <!-- Box 4: Security Copilot -->
+                    <rect x="100" y="290" width="500" height="68" rx="8" fill="#534AB7" fill-opacity="0.12" stroke="#7F77DD" stroke-width="1.5" />
+                    <rect x="100" y="290" width="6" height="68" rx="3" fill="#7F77DD" />
+                    <text x="124" y="318" fill="#a89ff0" font-size="10" font-weight="600" font-family="Inter, sans-serif" letter-spacing="0.06em">LAYER 04</text>
+                    <text x="124" y="338" fill="#e2e8f0" font-size="15" font-weight="600" font-family="Inter, sans-serif">Security Copilot</text>
+                    <text x="480" y="328" fill="#8bacc8" font-size="11" font-family="Inter, sans-serif" text-anchor="end">AI Investigation · Prompt Runbooks · Alert Summarization</text>
+
+                    <!-- Arrow -->
+                    <line x1="350" y1="360" x2="350" y2="378" stroke="#4ea8de" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrowhead)" />
+
+                    <!-- Box 5: Automated Response -->
+                    <rect x="100" y="380" width="500" height="68" rx="8" fill="#185FA5" fill-opacity="0.08" stroke="#185FA5" stroke-width="1.5" />
+                    <rect x="100" y="380" width="6" height="68" rx="3" fill="#4ea8de" />
+                    <text x="124" y="408" fill="#4ea8de" font-size="10" font-weight="600" font-family="Inter, sans-serif" letter-spacing="0.06em">LAYER 05</text>
+                    <text x="124" y="428" fill="#e2e8f0" font-size="15" font-weight="600" font-family="Inter, sans-serif">Automated Response</text>
+                    <text x="480" y="418" fill="#8bacc8" font-size="11" font-family="Inter, sans-serif" text-anchor="end">PowerShell · Ansible · Logic Apps · ServiceNow</text>
+
+                </svg>
+            </div>
         </div>
-        <p class="diagram-caption">The five-layer endpoint security pipeline</p>
+    </div>
+
+    <main class="container">
 
         <section class="layer-grid">
             <a href="layer1.html" class="card">
                 <span class="layer-num">01</span>
-                <h3>Windows & Azure Platform</h3>
+                <h3>Windows &amp; Azure Platform</h3>
                 <p>Active Directory, Entra ID, and Group Policy form the OS and identity foundation. Every security control depends on this layer being correctly configured and governed.</p>
             </a>
             <a href="layer2.html" class="card">
@@ -90,8 +114,8 @@
             </a>
             <a href="layer3.html" class="card">
                 <span class="layer-num">03</span>
-                <h3>Detection & Analytics</h3>
-                <p>Raw telemetry becomes actionable through detection rules and analytics platforms. Microsoft Defender for Endpoint and Microsoft Sentinel map signals to known attack patterns using the MITRE ATT&CK framework.</p>
+                <h3>Detection &amp; Analytics</h3>
+                <p>Raw telemetry becomes actionable through detection rules and analytics platforms. Microsoft Defender for Endpoint and Microsoft Sentinel map signals to known attack patterns using the MITRE ATT&amp;CK framework.</p>
             </a>
             <a href="layer4.html" class="card">
                 <span class="layer-num">04</span>
@@ -111,11 +135,12 @@
             <p>The five layers form a pipeline. Windows signals feed telemetry collection. Telemetry feeds detection rules. Detection feeds Security Copilot. Copilot feeds automated response. Each layer depends on the one below it.</p>
             <p>Security Copilot sits at the center of the pipeline. It acts as an investigation accelerator. It does not replace analysts. It gives them a structured starting point instead of a raw alert queue.</p>
         </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <p>Kenny Li · Senior Infrastructure Engineer · github.com/kenny-li-nyc</p>
+            <p>Kenny Li &middot; Senior Infrastructure Engineer &middot; github.com/kenny-li-nyc</p>
         </div>
     </footer>
 

@@ -253,3 +253,30 @@ footer {
     .page-layout { flex-direction: column; }
     .sidebar { width: 100%; border-right: none;
         border-bottom: 1px solid var(--border-light); } }
+
+
+/* Diagram section - sits between hero and main, has its own background */
+.diagram-section {
+    background-color: #f0f4f8;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 2.5rem 0 2rem;
+}
+
+.diagram-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.architecture-diagram {
+    background-color: #0a1628;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1.5rem 1rem;
+    border: 1px solid #1e3a5f;
+}
