@@ -93,6 +93,7 @@
                     <p>A 50,000-endpoint environment generates millions of events per day. Raw volume is not useful. Detection-relevant signal density is what matters.</p>
                     <p>Audit policy tuning determines which events get logged. Enabling process creation logging and command line auditing adds critical visibility into attacker behavior.</p>
                     <p>Log forwarding architecture determines how signals reach analytics platforms. Windows Event Forwarding suits smaller deployments. Agent-based collection scales better across 50,000 endpoints but requires more operational overhead.</p>
+                    <p>At 50,000 endpoints, streaming raw Sysmon and Windows Event logs directly into Sentinel creates significant Azure ingestion costs. In practice, Microsoft Defender for Endpoint stores raw endpoint telemetry in its own cloud storage, included in the MDE license. Sentinel ingests alerts and high value indicators from MDE rather than petabytes of raw event data. For non MDE log sources, the Azure Monitor Agent applies XPath filtering to drop noise before it reaches the cloud.</p>
                 </div>
 
                 <div class="content-block">
