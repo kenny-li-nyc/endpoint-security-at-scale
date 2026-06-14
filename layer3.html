@@ -96,6 +96,15 @@
                 </div>
 
                 <div class="content-block">
+                    <span class="section-tag">At scale</span>
+                    <h2>What breaks at 50,000 endpoints</h2>
+                    <p class="intro">Detection rules that work in a small environment become liabilities at scale. Alert fatigue, schema drift, and untested coverage gaps are the most common failure modes.</p>
+                    <p>Detection rules are sometimes never tuned after initial deployment. Alert volume grows until analysts stop reading them. Alert fatigue is as dangerous as having no detection at all.</p>
+                    <p>A KQL rule written against one log schema breaks silently when a data source changes. It keeps running and returning zero results. No notification fires. The coverage gap is invisible.</p>
+                    <p>MITRE ATT&CK coverage looks complete on a spreadsheet but has never been tested against a real simulation. Gaps only surface during a red team exercise or an actual incident.</p>
+                </div>
+
+                <div class="content-block">
                     <span class="section-tag">Pipeline connection</span>
                     <h2>How this layer feeds the next</h2>
                     <p>Detection produces alerts. Alerts are the input to Security Copilot. A well tuned detection layer sends Copilot high fidelity signals with rich context. A poorly tuned layer floods Copilot with noise and slows investigation.</p>
