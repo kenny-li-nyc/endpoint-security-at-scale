@@ -74,6 +74,16 @@
                     <p>Copilot prompt libraries are reviewed after every major incident. Prompts that produced incomplete summaries are rewritten. New prompt templates are added for techniques that appeared in recent exercises. The library is treated as a living operational document.</p>
                     <p>Telemetry coverage is reviewed whenever a new threat report surfaces a technique not currently logged. Audit policy changes are tested in a staging environment before domain-wide deployment. Log forwarding capacity is reviewed ahead of any significant infrastructure expansion.</p>
                 </div>
+
+                <div class="content-block">
+                    <span class="section-tag">Metrics</span>
+                    <h2>Metrics that matter</h2>
+                    <p class="intro">A healthy security pipeline produces measurable outcomes. These are the numbers that indicate whether the architecture is working.</p>
+                    <p>Mean time to detect measures how long it takes from attacker action to alert firing. In a well-tuned environment this is under five minutes for high-fidelity detections. Gaps in telemetry coverage are the most common cause of high detection times.</p>
+                    <p>Mean time to respond measures how long it takes from alert to remediation. Automated response for confirmed high-confidence detections should execute in under ten minutes. Manual approval gates for lower-confidence detections add time by design.</p>
+                    <p>False positive rate per detection rule measures signal quality. A rule firing more than ten percent false positives needs tuning before it is trusted for automated response. High false positive rates are the leading cause of alert fatigue.</p>
+                    <p>MITRE ATT&CK coverage percentage measures how much of the known threat landscape has an active detection. Most mature programs aim for coverage across all techniques used by threat actors targeting their industry. Coverage percentage without validation through purple team exercises is a number, not a guarantee.</p>
+                </div>
             </article>
         </main>
     </div>
