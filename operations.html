@@ -44,12 +44,16 @@
             </header>
 
             <article class="page-body">
-                <section class="content-block">
+                <div class="content-block">
                     <span class="section-tag">Pipeline</span>
                     <h2>The pipeline in practice</h2>
-                    <p class="intro">A security event flows through the entire architecture.</p>
-                    <p>A user runs a suspicious PowerShell command. This event generates a log entry on the endpoint. Layer 02 collects this log and forwards it to the SIEM. Layer 03 detects the malicious pattern and fires an alert. Security Copilot summarizes the alert and suggests a response. Automated response executes the remediation.</p>
-                </section>
+                    <p class="intro">A single security event touches every layer of this architecture before remediation executes. This is what that looks like in practice.</p>
+                    <p>A user on a managed Windows endpoint runs an obfuscated PowerShell command. Windows Security Event Log captures the script block. Sysmon records the process creation with full command line arguments. Both events forward to Microsoft Sentinel within seconds.</p>
+                    <p>Sentinel evaluates the event against active KQL detection rules. The command matches a known obfuscation pattern. An alert fires and Defender for Identity correlates it with a suspicious authentication event from the same user thirty minutes earlier. Defender XDR groups both alerts into a single incident.</p>
+                    <p>Security Copilot reads the incident. It builds a timeline connecting the authentication anomaly to the PowerShell execution. It identifies the technique as T1059.001 in the MITRE ATT&CK framework. It suggests isolating the endpoint and revoking the user token.</p>
+                    <p>The analyst reviews the Copilot summary and approves the response. A Sentinel Playbook triggers immediately. Defender for Endpoint isolates the host.</p>
+                    <p>Azure Automation revokes the Entra ID session token. ServiceNow creates an incident ticket with the full investigation trail attached. The entire sequence from detection to remediation takes under ten minutes.</p>
+                </div>
 
                 <section class="content-block">
                     <span class="section-tag">Failures</span>
