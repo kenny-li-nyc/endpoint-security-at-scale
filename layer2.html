@@ -101,6 +101,15 @@
                 </div>
 
                 <div class="content-block">
+                    <span class="section-tag">At scale</span>
+                    <h2>What breaks at 50,000 endpoints</h2>
+                    <p class="intro">Telemetry pipelines that work in a lab degrade in production. Scale introduces forwarding delays, policy conflicts, and coverage gaps that are invisible until an incident exposes them.</p>
+                    <p>Log forwarding backlogs during high-volume incidents. Event queues fill faster than forwarders can drain them. Logs that analysts need most arrive hours late or not at all.</p>
+                    <p>PowerShell script block logging is sometimes enabled on endpoints but never connected to Sentinel. The visibility exists locally but never reaches the detection layer.</p>
+                    <p>A GPO conflict can silently overwrite audit policy on a domain controller. Process creation logging stops without any alert. The gap is only discovered during a post-incident review.</p>
+                </div>
+
+                <div class="content-block">
                     <span class="section-tag">Pipeline connection</span>
                     <h2>How this layer feeds the next</h2>
                     <p>Telemetry is the fuel for every layer above it. Detection rules in Sentinel and Defender operate on this data. Security Copilot uses telemetry as evidence when building investigation timelines. Automated response playbooks query telemetry to validate findings before executing remediation.</p>
