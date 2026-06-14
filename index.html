@@ -190,10 +190,15 @@
 
         <section class="content-section">
             <h2>Why this architecture exists</h2>
-            <p>Manual log review does not scale at 50,000 endpoints. A human analyst cannot process millions of events per day. The architecture exists to automate that process without removing human oversight.</p>
-            <p>The core problem is data reduction. A single workstation generates thousands of noise events daily. Multiply this by 50,000 endpoints and the SIEM becomes overwhelmed. This architecture acts as a funnel to isolate true indicators of compromise.</p>
-            <p>The five layers form a pipeline. Windows configurations feed telemetry collection. Telemetry fuels detection rules. Detections trigger Security Copilot summaries. Copilot drives automated response actions.</p>
-            <p>Security Copilot sits at the center of the pipeline. It acts as an investigation accelerator. It does not replace analysts. It gives them a structured starting point instead of a raw alert queue.</p>
+            <p>Manual log review does not scale at 50,000 endpoints. A human analyst cannot process millions of events per day. The architecture exists to automate that process without removing human judgment from the decisions that matter.</p>
+            <p>The core problem is data reduction. A single workstation generates thousands of noise events daily. Multiply that by 50,000 endpoints and the SIEM becomes overwhelmed without a structured pipeline to filter signal from noise.</p>
+            <p>The five layers form a deliberate sequence. Each one makes the next one possible. Platform hygiene enables telemetry. Telemetry enables detection. Detection enables Security Copilot. Copilot enables automated response. A weakness at any layer degrades everything above it.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>About this reference</h2>
+            <p>This site was researched, structured, and authored by Kenny Li. It draws on 13 years of enterprise Windows and Azure infrastructure experience applied to the endpoint security domain. It is written for technical reviewers who want to understand how these layers connect in production, not just in theory.</p>
+            <p>Each layer page covers the core technologies, the operational failure modes at enterprise scale, and how that layer feeds the next. The operations page ties all five layers together through an end-to-end incident scenario.</p>
         </section>
 
     </main>
