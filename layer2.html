@@ -73,16 +73,16 @@
                             <p>Entra ID logs every authentication attempt and Conditional Access evaluation. Azure Activity Logs record control-plane changes such as VM restarts, role assignments, and policy modifications.</p>
                         </div>
                         <div class="tech-card">
-                            <h4>Microsoft Sentinel</h4>
-                            <p>Sentinel is the central SIEM and log aggregation platform for this architecture. All endpoint, identity, and cloud telemetry flows into Sentinel for storage, correlation, and detection rule evaluation.</p>
-                        </div>
-                        <div class="tech-card">
                             <h4>Network Flow Data</h4>
                             <p>DNS query logs, proxy logs, and NetFlow data reveal lateral movement and command-and-control communication patterns. Endpoint-only telemetry misses these signals.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Sysmon</h4>
                             <p>Sysmon extends native Windows logging with high fidelity process, network, and file events that audit policy alone cannot capture. It is deployed as a system service and writes to a dedicated Event Log channel that feeds directly into Sentinel.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Microsoft Sentinel</h4>
+                            <p>Sentinel is the central SIEM and log aggregation platform for this architecture. All endpoint, identity, and cloud telemetry flows into Sentinel for storage, correlation, and detection rule evaluation.</p>
                         </div>
                     </div>
                 </div>
