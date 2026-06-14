@@ -90,7 +90,8 @@
                     <span class="section-tag">Response patterns</span>
                     <h2>Common automated response scenarios</h2>
                     <p class="intro">Automation works best when the response action is well-defined and the risk of a false positive is low.</p>
-                    <p>Host isolation is the most common automated response action. When Defender confirms active malware, the endpoint is isolated from the network. It can still communicate with Defender. It cannot reach other internal systems.</p>
+                    <p>Host isolation is the most common automated response action. When Defender confirms active malware, a Sentinel Playbook calls the MDE API directly. The endpoint is isolated from the network within seconds. It can still communicate with Defender but cannot reach other internal systems.</p>
+                    <p>Speed matters here. Intune remediation scripts run on a sync cycle that can take minutes to hours. They are the right tool for post incident hardening and configuration correction. They are not the right tool for containing an active threat.</p>
                     <p>Service restart automation handles a common Defender alert. When a security service is stopped unexpectedly, automation restarts it and creates a ticket. This removes a manual step that previously required an analyst to respond.</p>
                     <p>Token revocation handles compromised identity scenarios. When Entra ID detects a risky sign-in, automation revokes active sessions for that user. The user is required to reauthenticate with MFA before regaining access.</p>
                 </section>
