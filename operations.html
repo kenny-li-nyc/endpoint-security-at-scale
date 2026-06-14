@@ -55,12 +55,15 @@
                     <p>Azure Automation revokes the Entra ID session token. ServiceNow creates an incident ticket with the full investigation trail attached. The entire sequence from detection to remediation takes under ten minutes.</p>
                 </div>
 
-                <section class="content-block">
-                    <span class="section-tag">Failures</span>
-                    <h2>Where things break</h2>
-                    <p class="intro">Failure modes exist at every layer of the pipeline.</p>
-                    <p>Telemetry gaps blind detection rules. Detection rules fire too broadly and create noise. Copilot prompts are often too vague to be useful. Automation runs without proper approval gates and causes outages.</p>
-                </section>
+                <div class="content-block">
+                    <span class="section-tag">Dependencies</span>
+                    <h2>How layer failures cascade</h2>
+                    <p class="intro">Each layer in this architecture depends on the one below it. A failure does not stay contained. It propagates upward and degrades every layer above it.</p>
+                    <p>A misconfigured audit policy in Layer 01 stops process creation events from being logged. Layer 02 forwards nothing because there is nothing to forward. Layer 03 detection rules run against incomplete data and miss the attack entirely. Copilot and automated response never activate because no alert fires.</p>
+                    <p>A log forwarding backlog in Layer 02 means Sentinel receives telemetry hours late. Detection rules fire on stale data. By the time Copilot builds an investigation timeline the attacker has already moved laterally. Response automation executes against a threat that has changed shape.</p>
+                    <p>Alert fatigue in Layer 03 degrades everything above it. Analysts stop reading high volume low fidelity alerts. Copilot summaries go unreviewed. Automated response playbooks sit unapproved, and the pipeline is technically functioning but operationally broken.</p>
+                    <p>This is why platform hygiene in Layer 01 is not an infrastructure concern. It is a security concern. Every tuning decision at the foundation determines what is possible at the top.</p>
+                </div>
 
                 <section class="content-block">
                     <span class="section-tag">Improvement</span>
