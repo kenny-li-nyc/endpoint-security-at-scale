@@ -58,7 +58,7 @@
                     <div class="tech-grid">
                         <div class="tech-card">
                             <h4>Active Directory</h4>
-                            <p>Controls authentication, authorization, and privileged access across the enterprise. Active Directory remains a primary target for attackers because compromise of domain administration can result in full control of the environment.</p>
+                            <p>Active Directory is the authoritative identity store for on-premises environments. It controls authentication, authorization, and group membership across domain-joined endpoints.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Microsoft Entra ID</h4>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="tech-card">
                             <h4>Endpoint Management</h4>
-                            <p>Tools like Microsoft Intune manage device configuration and compliance state for cloud-joined and co-managed endpoints. They enforce security baselines and feed compliance signals directly into Entra ID Conditional Access.</p>
+                            <p>Tools like Microsoft Intune manage device configuration and compliance state for cloud endpoints. They enforce security baselines and feed compliance signals directly into Entra ID Conditional Access.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Windows Security Event Log</h4>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="tech-card">
                             <h4>Privileged Access Management</h4>
-                            <p>Administrative accounts represent the highest-value targets in an enterprise environment. Technologies such as Just-In-Time access, Privileged Identity Management (PIM), and tiered administration help reduce the risk of credential compromise and privilege escalation.</p>
+                            <p>Administrative accounts represent the highest-value targets in an enterprise environment. Organizations use Just-In-Time access and tiered administration to reduce the risk of credential compromise.</p>
                         </div>
                         <div class="tech-card">
                             <h4>Tiered Administration</h4>
@@ -93,6 +93,15 @@
                     <p class="intro">Most endpoint attacks do not start with malware. They start with credential abuse.</p>
                     <p>Pass-the-hash attacks reuse captured NTLM hashes to authenticate without knowing the password. Kerberoasting extracts service account credentials from Active Directory ticket requests. GPO abuse repurposes a legitimate administrative tool to push attacker scripts to every machine in scope.</p>
                     <p>These attacks work because they blend in. They use tools Windows already trusts. Defending against them requires least privilege on admin accounts, auditing on privileged group membership, and the Protected Users security group enabled for sensitive accounts.</p>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-tag">At scale</span>
+                    <h2>What breaks at 50,000 endpoints</h2>
+                    <p class="intro">At enterprise scale, platform misconfigurations do not affect one machine. They create environment-wide blind spots that attackers can exploit before anyone notices.</p>
+                    <p>A stale computer object in Active Directory can still hold a valid Kerberos ticket. Attackers use those accounts for lateral movement because they often have no active monitoring attached to them.</p>
+                    <p>Process creation logging is frequently missing on domain controllers. Without it, credential dumping tools running on a DC produce no telemetry for detection to act on.</p>
+                    <p>Admin accounts are sometimes not removed after projects end. A single phished email on a forgotten Domain Admin account gives an attacker full control of the environment.</p>
                 </div>
 
                 <div class="content-block">
