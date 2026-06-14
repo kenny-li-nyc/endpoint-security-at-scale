@@ -65,12 +65,15 @@
                     <p>This is why platform hygiene in Layer 01 is not an infrastructure concern. It is a security concern. Every tuning decision at the foundation determines what is possible at the top.</p>
                 </div>
 
-                <section class="content-block">
+                <div class="content-block">
                     <span class="section-tag">Improvement</span>
                     <h2>Continuous improvement</h2>
-                    <p class="intro">The pipeline requires constant maintenance and refinement.</p>
-                    <p>The pipeline is not static. Detection rules are updated based on new threat intelligence. Telemetry coverage is audited against the MITRE ATT&CK matrix. Copilot prompt libraries are refined based on analyst feedback.</p>
-                </section>
+                    <p class="intro">A security pipeline is never finished. Threats evolve. Tools change. The architecture requires constant review to stay effective.</p>
+                    <p>Detection coverage is audited quarterly against the MITRE ATT&CK matrix. Each technique in scope gets mapped to an active detection rule. Gaps are prioritized based on threat actor prevalence in the industry. New rules are tested in alert-only mode before enforcement.</p>
+                    <p>Purple team exercises validate the pipeline end to end. The red team executes a known attack technique. The blue team monitors whether detection fires, whether Copilot builds a useful timeline, and whether automated response executes correctly. Failures at any stage feed directly into remediation work.</p>
+                    <p>Copilot prompt libraries are reviewed after every major incident. Prompts that produced incomplete summaries are rewritten. New prompt templates are added for techniques that appeared in recent exercises. The library is treated as a living operational document.</p>
+                    <p>Telemetry coverage is reviewed whenever a new threat report surfaces a technique not currently logged. Audit policy changes are tested in a staging environment before domain-wide deployment. Log forwarding capacity is reviewed ahead of any significant infrastructure expansion.</p>
+                </div>
             </article>
         </main>
     </div>
