@@ -280,3 +280,11 @@ footer {
     padding: 1.5rem 1rem;
     border: 1px solid #1e3a5f;
 }
+
+.page-layout:has(.no-sidebar) {
+    display: block;
+}
+
+.no-sidebar {
+    max-width: 100%;
+}
