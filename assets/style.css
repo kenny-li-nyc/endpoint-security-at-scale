@@ -288,3 +288,15 @@ footer {
 .no-sidebar {
     max-width: 100%;
 }
+
+.usecase-field {
+    margin-top: 1.5rem;
+}
+
+.usecase-field h4 {
+    color: var(--accent-teal);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
