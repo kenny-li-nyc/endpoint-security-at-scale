@@ -81,6 +81,28 @@
                 <div class="content-block" id="usecase-02">
                     <span class="section-tag">Use Case 02</span>
                     <h2>Endpoint Anomaly to Automated Response</h2>
+                    <div class="usecase-timeline">
+                        <div class="usecase-step">
+                            <span class="step-marker">1</span>
+                            <p class="step-label">Problem</p>
+                            <p>Across 50,000 endpoints, something unusual happens constantly. Most of it is harmless. A service restarts, a process behaves a little differently, nothing to worry about. But buried in that noise is the occasional real problem, and the team cannot afford to have someone manually check every flagged event. If every anomaly needs a human to look at it first, the team falls behind fast, and the real threats end up waiting in a queue behind the noise.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">2</span>
+                            <p class="step-label">Signal</p>
+                            <p>Say a workstation suddenly starts making a lot of outbound connections to an address nobody recognizes. Defender for Endpoint picks this up as unusual behavior for that machine. At the same time, network flow data shows the same pattern, which makes it less likely to be a fluke. Sentinel pulls both signals together and decides this one is worth a closer look, not just background noise.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">3</span>
+                            <p class="step-label">Action</p>
+                            <p>Rather than dropping straight into an analyst's queue, the incident goes through an automated check first. A Sentinel Playbook gathers the relevant context, recent activity on that host, what user was logged in, whether this machine has done anything like this before, and packages it into one place. If the pattern matches something the team has already decided is high confidence, the playbook can isolate the host immediately through the Defender for Endpoint API. If it does not clearly match, it gets routed to an analyst with all that context already attached instead of a bare alert.</p>
+                        </div>
+                        <div class="usecase-step is-active">
+                            <span class="step-marker">4</span>
+                            <p class="step-label">Outcome</p>
+                            <p>The team is not throwing more people at the noise. The clear cut cases get handled in seconds, and the genuinely uncertain ones land on an analyst's desk already half investigated. This is really the core idea behind automation at this scale: speed for the obvious calls, and better information for the calls that need a human anyway.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="content-block" id="usecase-03">
