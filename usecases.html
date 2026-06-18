@@ -54,21 +54,27 @@
                 <div class="content-block" id="usecase-01">
                     <span class="section-tag">Use Case 01</span>
                     <h2>Copilot-Assisted Investigation</h2>
-                    <p class="intro">Analysts lose time piecing together context after an alert fires. A single PowerShell alert requires opening Sentinel, querying sign-in logs, checking Defender for related activity, and writing notes by hand. At enterprise scale this repeats hundreds of times a day.</p>
-
-                    <div class="usecase-field">
-                        <h4>Signal</h4>
-                        <p>A Defender for Endpoint alert flags an obfuscated PowerShell command on a managed workstation. Sentinel correlates it with a risky sign-in event from the same user thirty minutes earlier. Defender XDR groups both into a single incident.</p>
-                    </div>
-
-                    <div class="usecase-field">
-                        <h4>Action</h4>
-                        <p>A standardized prompt template asks Copilot to summarize the incident, map the technique to MITRE ATT&CK, and list the affected identity and host. The prompt specifies the incident ID and time window so Copilot queries only relevant telemetry. The output gets logged alongside the incident for auditability.</p>
-                    </div>
-
-                    <div class="usecase-field">
-                        <h4>Outcome</h4>
-                        <p>The analyst reviews a structured summary instead of building one from scratch. Investigation time drops because correlation work is already done. Every Copilot output is tied to a specific prompt template, which makes the process auditable and repeatable across the team.</p>
+                    <div class="usecase-timeline">
+                        <div class="usecase-step">
+                            <span class="step-marker">1</span>
+                            <p class="step-label">Problem</p>
+                            <p>Analysts lose time piecing together context after an alert fires. A single PowerShell alert requires opening Sentinel, querying sign-in logs, checking Defender for related activity, and writing notes by hand. At enterprise scale this repeats hundreds of times a day.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">2</span>
+                            <p class="step-label">Signal</p>
+                            <p>A Defender for Endpoint alert flags an obfuscated PowerShell command on a managed workstation. Sentinel correlates it with a risky sign-in event from the same user thirty minutes earlier. Defender XDR groups both into a single incident.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">3</span>
+                            <p class="step-label">Action</p>
+                            <p>A standardized prompt template asks Copilot to summarize the incident, map the technique to MITRE ATT&CK, and list the affected identity and host. The prompt specifies the incident ID and time window so Copilot queries only relevant telemetry. The output gets logged alongside the incident for auditability.</p>
+                        </div>
+                        <div class="usecase-step is-active">
+                            <span class="step-marker">4</span>
+                            <p class="step-label">Outcome</p>
+                            <p>The analyst reviews a structured summary instead of building one from scratch. Investigation time drops because correlation work is already done. Every Copilot output is tied to a specific prompt template, which makes the process auditable and repeatable across the team.</p>
+                        </div>
                     </div>
                 </div>
 
