@@ -108,6 +108,28 @@
                 <div class="content-block" id="usecase-03">
                     <span class="section-tag">Use Case 03</span>
                     <h2>Compliance Drift at Fleet Scale</h2>
+                    <div class="usecase-timeline">
+                        <div class="usecase-step">
+                            <span class="step-marker">1</span>
+                            <p class="step-label">Problem</p>
+                            <p>A policy gets rolled out, a baseline gets set, everything looks fine on day one. Then six months pass. Some machines missed an update. Some had a setting changed locally and never reported it. Some are running an older agent version nobody noticed. None of this happens all at once, it drifts in slowly, and by the time someone notices, a meaningful chunk of the fleet no longer matches what the team thinks it looks like.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">2</span>
+                            <p class="step-label">Signal</p>
+                            <p>Intune and Defender both report on device state regularly, things like patch level, configuration baseline, and agent health. When the team compares what is actually out there against what the policy expects, gaps show up. Maybe 4 percent of laptops are missing a required setting. Maybe a specific office location has a cluster of machines running behind on patches because of some local network issue nobody flagged.</p>
+                        </div>
+                        <div class="usecase-step">
+                            <span class="step-marker">3</span>
+                            <p class="step-label">Action</p>
+                            <p>Instead of someone manually pulling reports and squinting at spreadsheets, Copilot is given a recurring job: take the current device state, compare it against policy, and write up what is out of line and where it is concentrated. A person still checks this before anything changes, since a misconfigured report could send the team chasing a problem that does not really exist. Once it is confirmed, Intune remediation scripts handle the actual fix, things like reapplying a setting or pushing a missed update, across whichever machines need it.</p>
+                        </div>
+                        <div class="usecase-step is-active">
+                            <span class="step-marker">4</span>
+                            <p class="step-label">Outcome</p>
+                            <p>Drift gets caught in days instead of getting discovered during an audit or, worse, during an incident. The reporting part, which used to eat a chunk of someone's week, now takes a few minutes to review. The actual fixing still goes through Intune the normal way, which is the right tool for this since none of it needs to happen in seconds. It just needs to happen reliably.</p>
+                        </div>
+                    </div>
                 </div>
             </article>
         </main>
