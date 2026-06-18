@@ -58,22 +58,22 @@
                         <div class="usecase-step">
                             <span class="step-marker">1</span>
                             <p class="step-label">Problem</p>
-                            <p>Analysts lose time piecing together context after an alert fires. A single PowerShell alert requires opening Sentinel, querying sign-in logs, checking Defender for related activity, and writing notes by hand. At enterprise scale this repeats hundreds of times a day.</p>
+                            <p>Most security teams know this pattern. An alert comes in for something like a weird PowerShell command, and now an analyst has to go figure out what actually happened. They open Sentinel, dig through sign in logs, check if Defender saw anything related on that machine, and write up notes as they go. None of this is hard, but it takes time, and a busy team is fielding alerts like this constantly. The work is mostly repetitive, which makes it a good candidate for some help from automation.</p>
                         </div>
                         <div class="usecase-step">
                             <span class="step-marker">2</span>
                             <p class="step-label">Signal</p>
-                            <p>A Defender for Endpoint alert flags an obfuscated PowerShell command on a managed workstation. Sentinel correlates it with a risky sign-in event from the same user thirty minutes earlier. Defender XDR groups both into a single incident.</p>
+                            <p>Here is what a real version of this looks like. Defender for Endpoint flags an obfuscated PowerShell command running on someone's laptop. Around the same time, Sentinel notices that same user had a risky sign in about half an hour earlier, maybe from a new location or a new device. Defender XDR sees that these two things are probably related and bundles them into one incident instead of two separate alerts.</p>
                         </div>
                         <div class="usecase-step">
                             <span class="step-marker">3</span>
                             <p class="step-label">Action</p>
-                            <p>A standardized prompt template asks Copilot to summarize the incident, map the technique to MITRE ATT&CK, and list the affected identity and host. The prompt specifies the incident ID and time window so Copilot queries only relevant telemetry. The output gets logged alongside the incident for auditability.</p>
+                            <p>Instead of letting the analyst start from a blank page, the team gives Copilot a specific, repeatable prompt to run against incidents like this. The prompt tells Copilot which incident to look at, what time window matters, and asks for three things: a plain summary of what happened, which MITRE ATT&CK technique it matches, and which user and machine were involved. Because the prompt is the same every time, the output is consistent, and the team keeps a record of which prompt produced which result.</p>
                         </div>
                         <div class="usecase-step is-active">
                             <span class="step-marker">4</span>
                             <p class="step-label">Outcome</p>
-                            <p>The analyst reviews a structured summary instead of building one from scratch. Investigation time drops because correlation work is already done. Every Copilot output is tied to a specific prompt template, which makes the process auditable and repeatable across the team.</p>
+                            <p>The analyst still makes the call on what to do next, but they are not starting from zero. They get a clear summary instead of raw logs, which cuts down the time spent just understanding what happened. Because every summary is tied back to a known prompt, it is also easy to check later whether the prompt is still doing a good job or needs adjusting. That matters more than it sounds. Teams that skip this step end up with Copilot outputs nobody can explain or trust later.</p>
                         </div>
                     </div>
                 </div>
