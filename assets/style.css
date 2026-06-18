@@ -289,18 +289,6 @@ footer {
     max-width: 100%;
 }
 
-.usecase-field {
-    margin-top: 1.5rem;
-}
-
-.usecase-field h4 {
-    color: var(--accent-teal);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-}
-
 .usecase-preview {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -350,4 +338,72 @@ footer {
         grid-template-columns: 1fr;
         padding: 2rem 1.25rem 0.5rem;
     }
+}
+
+.usecase-timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+    max-width: 680px;
+}
+
+.usecase-timeline::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border-light);
+}
+
+.usecase-step {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.usecase-step:last-child {
+    margin-bottom: 0;
+}
+
+.usecase-step .step-marker {
+    position: absolute;
+    left: -2rem;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.usecase-step.is-active .step-marker {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.usecase-step .step-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.usecase-step.is-active .step-label {
+    color: var(--accent-teal);
+}
+
+.usecase-step p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0;
 }
